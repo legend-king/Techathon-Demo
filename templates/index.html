@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <p>Home page content</p>
+    {{value}}
+
+    {{request.user}}
+
+    {% for question in questions %}
+       <p>{{question.question}} - {{question.points}} points</p> 
+       {% for hint in question.hint_set.all %}
+            <p>{{hint.hint}}</p>
+       {% endfor %}
+    {% endfor %}
+</body>
+</html>
